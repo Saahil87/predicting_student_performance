@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/css/Responsive-Form-1.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/assets/css/Responsive-Form.css') }}">
+</head>
+
+
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Group 6</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#academicInfluences">Academic influences</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#socialInfluences">Social Influences</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead text-center text-white d-flex" style="background-image:url('{{ url_for('static',filename='styles/assets/img/header.jpg') }}');">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase"><strong>Predicting Student Performance</strong></h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <p class="text-faded mb-5"><br>Student’s academic performance affected by many factors, like personal, socio-economic and other environmental variable. Knowledge about these factors and their effect on student performance can help in <strong>managing their outcomes</strong>.
+                    Here we'll help you predict your own performance.<br><br></p><a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#about">Find Out More</a></div>
+        </div>
+    </header>
+    <section id="about" class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col offset-lg-8 mx-auto text-center">
+                    <h2 class="text-white section-heading">We've got what you need!</h2>
+                    <hr class="light my-4">
+                    <p class="text-faded mb-4"><br>The primary purpose of any educational institution is to ensure that quality education is provided to its students. This project helps in predicting the overall performance of the student by extracting useful available data (student
+                        courses records, event participation, extra and co-curricular activities, placements). Assisting them in a timely manner will reduce the number of students failing a particular course and will also indirectly reduce the number
+                        of students who are dropping out of their educational program. This form will test your Academic as well as Social Influences and map them to build a model of your performance and then classify it intelligently to get the most
+                        accurate reults. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Fill the below form with almost accurate data to get better results!</p><a class="btn btn-light btn-xl js-scroll-trigger" role="button" href="#academicInfluences">Get Started!</a></div>
+            </div>
+        </div>
+    </section>
+	<form action="http://localhost:5000/results" method="post">
+    <section id="academicInfluences">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Academic Influences</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                
+                    <div class="form-group">
+                        <div id="formdiv">
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Name </strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control" type="text" name="name" placeholder="Name" style="margin-left:0px;font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Average Pointer (until most recent semester)</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control" type="number" min="0" max="10" value="8.0" step="0.01" name="avgPtr" placeholder="Average Pointer" style="margin-left:0px;font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;margin-top:-16px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Approximate average attendance for this semester</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" value="0" name="attendanceRadio" checked="" id="attendance1" class="custom-control-input"><label class="custom-control-label" for="attendance1">Less than 50</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" value="1" name="attendanceRadio" id="attendance2" class="custom-control-input"><label class="custom-control-label" for="attendance2">50 to 75</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" value="2" name="attendanceRadio" id="attendance3" class="custom-control-input"><label class="custom-control-label" for="attendance3">Greater than 75</label></div>
+                                        </fieldset>
+                                        <fieldset></fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Approximately how much time do you spend studying? (no. of hours)</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset></fieldset>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="1" name="studyHoursRadio" checked="" id="studyHours1" class="custom-control-input"><label class="custom-control-label" for="studyHours1">1</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="2" name="studyHoursRadio" id="studyHours2" class="custom-control-input"><label class="custom-control-label" for="studyHours2">2</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="3" name="studyHoursRadio" id="studyHours3" class="custom-control-input"><label class="custom-control-label" for="studyHours3">3</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="4" name="studyHoursRadio" id="studyHours4" class="custom-control-input"><label class="custom-control-label" for="studyHours4">4</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="5" name="studyHoursRadio" id="studyHours5" class="custom-control-input"><label class="custom-control-label" for="studyHours5">5</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="6" name="studyHoursRadio" id="studyHours6" class="custom-control-input"><label class="custom-control-label" for="studyHours6">6</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="7" name="studyHoursRadio" id="studyHours7" class="custom-control-input"><label class="custom-control-label" for="studyHours7">7</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="8" name="studyHoursRadio" id="studyHours8" class="custom-control-input"><label class="custom-control-label" for="studyHours8">8</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="9" name="studyHoursRadio" id="studyHours9" class="custom-control-input"><label class="custom-control-label" for="studyHours9">9</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" value="10" name="studyHoursRadio" id="studyHours10" class="custom-control-input"><label class="custom-control-label" for="studyHours10">10</label></div>
+                                        </fieldset>
+                                        <fieldset></fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Have you attended any classes for any subject in any of the following semesters?</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="No classes enrolled" checked="" id="noEnrolled" class="custom-control-input"><label class="custom-control-label" for="noEnrolled">No classes enrolled</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 1" id="sem1" class="custom-control-input"><label class="custom-control-label" for="sem1">Semester 1</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 2" id="sem2" class="custom-control-input"><label class="custom-control-label" for="sem2">Semester 2</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 3" id="sem3" class="custom-control-input"><label class="custom-control-label" for="sem3">Semester 3</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 4" id="sem4" class="custom-control-input"><label class="custom-control-label" for="sem4">Semester 4</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 5" id="sem5" class="custom-control-input"><label class="custom-control-label" for="sem5">Semester 5</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 6" id="sem6" class="custom-control-input"><label class="custom-control-label" for="sem6">Semester 6</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 7" id="sem7" class="custom-control-input"><label class="custom-control-label" for="sem7">Semester 7</label></div>
+                                            <div class="custom-control custom-checkbox"><input type="checkbox" name="Sem" value="Semester 8" id="sem8" class="custom-control-input"><label class="custom-control-label" for="sem8">Semester 8</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Are you a Regular planner or Last minute completionist?</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1" style="font-family:Roboto, sans-serif;">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="regularLastMinRadio" value="1" checked="" id="regularPlanner" class="custom-control-input"><label class="custom-control-label" for="regularPlanner">Regular planner</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="regularLastMinRadio" value="0" id="lastMinuteCompletionist" class="custom-control-input"><label class="custom-control-label" for="lastMinuteCompletionist">Last minute completionist</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Are you part of any Society/College council? (past or present)</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="councilRadio" value="1" checked="" id="councilYes" class="custom-control-input"><label class="custom-control-label" for="councilYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="councilRadio" value="0" id="councilNo" class="custom-control-input"><label class="custom-control-label" for="councilNo">No</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>How many group projects you've been a part of?</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control" type="number" min="0" max="100" value="5" name="groupProjects" placeholder="Number" id="groupProjects" style="font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>How many solo projects you've been a part of?</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control"type="number" min="0" max="100" value="5" name="soloProjects"  placeholder="Number" id="soloProjects" style="font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Are you pursuing any Higher studies?</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="higherStudiesRadio" value="1" checked="" id="higherStudiesYes" class="custom-control-input"><label class="custom-control-label" for="higherStudiesYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="higherStudiesRadio" value="0" id="higherStudiesNo" class="custom-control-input"><label class="custom-control-label" for="higherStudiesNo">No</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="higherStudiesRadio" value="0.5" id="higherStudiesMaybe" class="custom-control-input"><label class="custom-control-label" for="higherStudiesMaybe">Maybe</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><strong>Have you been suffering or suffered any medical condition?</strong></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="medicalConditionRadio" value="1" checked="" id="medicalConditionYes" class="custom-control-input"><label class="custom-control-label" for="medicalConditionYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="medicalConditionRadio" value="0" id="medicalConditionNo" class="custom-control-input"><label class="custom-control-label" for="medicalConditionNo">No</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><br>Approximate hours spend on non-Technical Co-curricular/Extra-Curricular Activities Outside college (NGO, Cleanliness drives, Blood donation camps, etc)<br><br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control" type="number" min="0" max="100" value="5" name="noOfNonTech" placeholder="Number" id="noOfNonTech" style="font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><br>Approximate hours spend on Technical Co-curricular/Extra-Curricular Activities Outside college (Internships, Inter-collegiate competitions, hackathons, Extra courses)<br><br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control" type="number" min="0" max="100" value="5" name="noOfTech" placeholder="Number" id="noOfTech" style="font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;"><br>How many KTs do you have? (live or dead)<br><br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control" type="number" min="0" max="20" value="0" name="kt" placeholder="Number" id="kt" style="font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+    <section id="socialInfluences" class="bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Social Influences</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+               
+                    <div class="form-group">
+                        <div id="formdiv">
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Approximately how much time do you spend on Social Media?(Hours per Day)<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="1" checked="" id="socialHours1" class="custom-control-input"><label class="custom-control-label" for="socialHours1">1</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="2" id="socialHours2" class="custom-control-input"><label class="custom-control-label" for="socialHours2">2</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="3" id="socialHours3" class="custom-control-input"><label class="custom-control-label" for="socialHours3">3</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="4" id="socialHours4" class="custom-control-input"><label class="custom-control-label" for="socialHours4">4</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="5" id="socialHours5" class="custom-control-input"><label class="custom-control-label" for="socialHours5">5</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="6" id="socialHours6" class="custom-control-input"><label class="custom-control-label" for="socialHours6">6</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="7" id="socialHours7" class="custom-control-input"><label class="custom-control-label" for="socialHours7">7</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="8" id="socialHours8" class="custom-control-input"><label class="custom-control-label" for="socialHours8">8</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="9" id="socialHours9" class="custom-control-input"><label class="custom-control-label" for="socialHours9">9</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="socialHoursRadio" value="10" id="socialHours10" class="custom-control-input"><label class="custom-control-label" for="socialHours10">10</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;margin-top:-16px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Approximately how much time do you spend for Entertainment Activities(Watching TV, Movies, Anime, Series, Video Games, etc)?(Hours per Day)<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset></fieldset>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="1" checked="" id="entertainmentHours1" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours1">1</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="2" id="entertainmentHours2" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours2">2</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="3" id="entertainmentHours3" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours3">3</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="4" id="entertainmentHours4" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours4">4</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="5" id="entertainmentHours5" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours5">5</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="6" id="entertainmentHours6" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours6">6</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="7" id="entertainmentHours7" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours7">7</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="8" id="entertainmentHours8" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours8">8</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="9" id="entertainmentHours9" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours9">9</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="entertainmentHoursRadio" value="10" id="entertainmentHours10" class="custom-control-input"><label class="custom-control-label" for="entertainmentHours10">10</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Approximately how much time do you spend for Outdoor Activities(Gym, Swimming, Outdoor sports, etc)?(Hours per Day)<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="1" checked="" id="outdoorHours1" class="custom-control-input"><label class="custom-control-label" for="outdoorHours1">1</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="2" id="outdoorHours2" class="custom-control-input"><label class="custom-control-label" for="outdoorHours2">2</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="3" id="outdoorHours3" class="custom-control-input"><label class="custom-control-label" for="outdoorHours3">3</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="4" id="outdoorHours4" class="custom-control-input"><label class="custom-control-label" for="outdoorHours4">4</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="5" id="outdoorHours5" class="custom-control-input"><label class="custom-control-label" for="outdoorHours5">5</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="6" id="outdoorHours6" class="custom-control-input"><label class="custom-control-label" for="outdoorHours6">6</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="7" id="outdoorHours7" class="custom-control-input"><label class="custom-control-label" for="outdoorHours7">7</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="8" id="outdoorHours8" class="custom-control-input"><label class="custom-control-label" for="outdoorHours8">8</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="9" id="outdoorHours9" class="custom-control-input"><label class="custom-control-label" for="outdoorHours9">9</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="outdoorHoursRadio" value="10" id="outdoorHours10" class="custom-control-input"><label class="custom-control-label" for="outdoorHours10">10</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Approximately how much time do you spend traveling to and from college?<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset></fieldset>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="collegeTimeRadio" value="1" checked="" id="collegeTime1" class="custom-control-input"><label class="custom-control-label" for="collegeTime1">1</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="collegeTimeRadio" value="2" id="collegeTime2" class="custom-control-input"><label class="custom-control-label" for="collegeTime2">2</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="collegeTimeRadio" value="3" id="collegeTime3" class="custom-control-input"><label class="custom-control-label" for="collegeTime3">3</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="collegeTimeRadio" value="4" id="collegeTime4" class="custom-control-input"><label class="custom-control-label" for="collegeTime4">4</label></div>
+                                            <div class="custom-control custom-radio custom-control-inline"><input type="radio" name="collegeTimeRadio" value="5" id="collegeTime5" class="custom-control-input"><label class="custom-control-label" for="collegeTime5">5</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Do you have any sibling pass-out or currently pursuing engineering?<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1" style="font-family:Roboto, sans-serif;">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="siblingRadio" value="1" checked="" id="siblingYes" class="custom-control-input"><label class="custom-control-label" for="siblingYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="siblingRadio" value="0" id="siblingNo" class="custom-control-input"><label class="custom-control-label" for="siblingNo">No</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Have you ever faced depression?<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="depressionRadio" value="1" checked="" id="depressionYes" class="custom-control-input"><label class="custom-control-label" for="depressionYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="depressionRadio" value="0" id="depressionNo" class="custom-control-input"><label class="custom-control-label" for="depressionNo">No</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="depressionRadio" value="0.5" id="depressionMaybe" class="custom-control-input"><label class="custom-control-label" for="depressionMaybe">Maybe</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Have you faced any Family Crisis?<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="familyCrisisRadio" value="1" checked="" id="familyCrisisYes" class="custom-control-input"><label class="custom-control-label" for="familyCrisisYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="familyCrisisRadio" value="0" id="familyCrisisNo" class="custom-control-input"><label class="custom-control-label" for="familyCrisisNo">No</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="familyCrisisRadio" value="0.5" id="familyCrisisMaybe" class="custom-control-input"><label class="custom-control-label" for="familyCrisisMaybe">Maybe</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Are you interested in your current branch of engineering?<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="interestedRadio" value="1" checked="" id="interestedYes" class="custom-control-input"><label class="custom-control-label" for="interestedYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="interestedRadio" value="0" id="interestedNo" class="custom-control-input"><label class="custom-control-label" for="interestedNo">No</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="interestedRadio" value="0.5" id="interestedMaybe" class="custom-control-input"><label class="custom-control-label" for="interestedMaybe">Maybe</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">How many friends are there in your college social group?<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1"><input class="form-control" type="number" min="0" max="100" value="5" placeholder="Number" name="noOfFriends" id="noOfFriends" style="font-family:Roboto, sans-serif;" required></div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-md-8 offset-md-1">
+                                    <p style="margin-left:2%;font-family:Roboto, sans-serif;font-size:24px;">Are you a Hostelite?<br></p>
+                                </div>
+                                <div class="col-md-10 offset-md-1">
+                                    <div>
+                                        <fieldset>
+                                            <div class="custom-control custom-radio"><input type="radio" name="hosteliteRadio" value="1" checked="" id="hosteliteYes" class="custom-control-input"><label class="custom-control-label" for="hosteliteYes">Yes</label></div>
+                                            <div class="custom-control custom-radio"><input type="radio" name="hosteliteRadio" value="0" id="hosteliteNo" class="custom-control-input"><label class="custom-control-label" for="hosteliteNo">No</label></div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row" style="margin-right:0px;margin-left:0px;padding-top:24px;">
+                                <div class="col-12 col-md-4 offset-md-4 text-center"><button class="btn btn-light btn-lg text-center" type="submit">Submit </button></div>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
+	</form>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="my-4">
+                    <p class="mb-5">Want to know more about how this works? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 ml-auto text-center"><i class="fa fa-group fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-once="true"></i>
+                    <p>Mrs. Priya R.L. <br>Priyanka Bhatia <br>Rishabh Bhatt <br>Saahil Hiranandani <br>Bhavesh Motiramani</p>
+                </div>
+                <div class="col-lg-4 mr-auto text-center"><i class="fa fa-envelope-o fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300" data-aos-once="true"></i>
+                    <p><a href="mailto:priya.rl@ves.ac.in">priya.rl@ves.ac.in <br></a><a href="mailto:2015priyanka.bhatia@ves.ac.in">2015priyanka.bhatia@ves.ac.in <br></a><a href="mailto:2015rishabh.bhatt@ves.ac.in">&nbsp;2015rishabh.bhatt@ves.ac.in <br></a>
+                        <a
+                            href="mailto:2015saahil.hiranandani@ves.ac.in">2015saahil.hiranandani@ves.ac.in <br></a><a href="mailto:2015bhavesh.motiramani@ves.ac.in">2015bhavesh.motiramani@ves.ac.in</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+    <script src="	{{ url_for('static',filename='styles/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="{{ url_for('static',filename='styles/assets/js/creative.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/assets/js/bs-animation.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+</body>
+
+</html>
